@@ -37,7 +37,10 @@ public class Servidor_RMI extends UnicastRemoteObject implements InterfaceServid
 
     @Override
     public String reverseString(String value) throws RemoteException {
-        return "oi pivete";
+        StringBuffer sb = new StringBuffer(value);//Opera sobre o valor de quem a chamou, já String não. 
+        sb.reverse();//Inverte a string
+        String str = sb.toString();//Converte a String de Stringbuffer para String
+        return str;
     }
     
 }
